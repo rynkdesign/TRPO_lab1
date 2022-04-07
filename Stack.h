@@ -22,9 +22,10 @@ class Stack
     Node* top;
 
     int size;
-    int getSize();
-    void push(int value_);
-    void pop();
+      int getSize(); // Получение размерности стека
+      void push(int value_); // Помещение объекта в стек
+      void pop(); // Удаление верхнего объекта из стека
+      int topFunc(); // Извлечение верхнего объекта из стека
 };
 
 
