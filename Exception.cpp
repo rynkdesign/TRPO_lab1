@@ -14,14 +14,12 @@ namespace exep_stack
         {
             message = new char[strlen(arg_message)+1];
             strcpy(message,arg_message);
-            //strcpy_s(message, strlen(arg_message) + 1, arg_message);
         }
 
         EStackException(const EStackException& arg)
         {
             message = new char[strlen(arg.message)+1];
             strcpy(message,arg.message);
-            //strcpy_s(message, strlen(arg.message) + 1, arg.message);
         }
 
         ~EStackException()

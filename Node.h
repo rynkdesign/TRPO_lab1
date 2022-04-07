@@ -1,14 +1,15 @@
 #ifndef NODE_H
 #define NODE_H
 
+template <class T>
 class Node
 {
   public:
 
-  int value; // потом поменять на теплате
-  Node* next;
+  T value; // данные
+  Node<T>* next;
 
-  Node(int value_=0, Node* next_ = nullptr) // потом поменять на теплате
+  Node(T value_ = nullptr, Node<T>* next_ = nullptr)
   {
       value=value_; next=next_;
   }

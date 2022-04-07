@@ -9,7 +9,6 @@ CONFIG -= app_bundle
 
 SOURCES += \
         Exception.cpp \
-        Stack.cpp \
         main.cpp
 
 # Default rules for deployment.
