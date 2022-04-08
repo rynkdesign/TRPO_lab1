@@ -2,17 +2,18 @@
 #define NODE_H
 
 template <class T>
-class Node
+class Node // Класс узлов Стека
 {
   public:
 
-  T value; // данные
-  Node<T>* next;
+  T value; // Данные
+  Node<T>* next; //Указатель на следующий элемент Стека
 
-  Node(T value_ = nullptr, Node<T>* next_ = nullptr)
+  Node(const T& value_ = T(), Node<T>* next_ = nullptr) // Конструктор
   {
       value=value_; next=next_;
   }
+
 };
 
 

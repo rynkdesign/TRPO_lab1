@@ -9,7 +9,9 @@ CONFIG -= app_bundle
 
 SOURCES += \
         Exception.cpp \
-        main.cpp
+        PersonKeeper.cpp \
+        main.cpp \
+        person.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -18,4 +20,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Node.h \
-    Stack.h
+    PersonKeeper.h \
+    Stack.h \
+    person.h
+
+DISTFILES += \
+    input.txt \
+    output.txt

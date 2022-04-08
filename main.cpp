@@ -1,38 +1,22 @@
 #include <QCoreApplication>
 #include <iostream>
 #include "Stack.h"
+#include "PersonKeeper.h"
 
 int main()
 {
 
     try
     {
-        Stack<int> massiv;
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        //std::cout<<"Top: "<<massiv.topFunc()<< std::endl; // Вызов top в пустом стеке для проверки
-        //massiv.pop(); // Вызов pop в пустом стеке для проверки
-        massiv.push(3);
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        std::cout<<"Top: "<<massiv.topFunc()<< std::endl;
-        std::cout<<"-----------------------------------"<< std::endl;
-        massiv.push(5);
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        std::cout<<"Top: "<<massiv.topFunc()<< std::endl;
-        std::cout<<"-----------------------------------"<< std::endl;
-        massiv.push(9);
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        std::cout<<"Top: "<<massiv.topFunc()<< std::endl;
-        std::cout<<"-----------------------------------"<< std::endl;
-        massiv.push(2);
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        std::cout<<"Top: "<<massiv.topFunc()<< std::endl;
-        std::cout<<"-----------------------------------"<< std::endl;
-        massiv.pop();
-        std::cout<<"Razmer: "<<massiv.getSize()<< std::endl;
-        std::cout<<"Top: "<<massiv.topFunc()<< std::endl;
-        std::cout<<"-----------------------------------"<< std::endl;
+        std::fstream File; // Открываем файл
+        File.open("input.txt", std::ios_base::in); // Открываем его на чтение
+        Stack<Person> Persons = PersonKeeper::instance().readPersons(File); // Считываем
+        std::fstream File1; // Открываем файл1
+        File1.open("output.txt", std::ios_base::out); // Открываем его на запись
+        PersonKeeper::instance().writePersons(Persons, File1); // Записываем
+
     }
-    catch (const exep_stack::EStackEmpty & e) //исключение - пустой стек
+    catch (const exep_stack::EStackEmpty & e) // Исключение - пустой стек
     {
         std::cout<< e.what();
     }
