@@ -31,7 +31,7 @@ Stack<Person> PersonKeeper::readPersons(std::fstream& ifile)
 {
     if (!ifile) // Если файл не открылся
     {
-            throw std::runtime_error("File not found\n"); // Выбрасываем исключение
+            throw std::runtime_error("Error reading file. File not found\n"); // Выбрасываем исключение
     }
 
     Stack<Person> stack;

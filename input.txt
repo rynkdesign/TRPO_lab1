@@ -1,4 +1,5 @@
-Rynk Daniil Vitalievich
+Popov
 Ivanov Ivan Ivanovich
-Sidorov Alexander Mikhailovich
-A B C
+Rynk Daniil
+A b C
+Imya    Familiya    Otchestvo
