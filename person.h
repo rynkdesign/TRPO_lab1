@@ -16,13 +16,15 @@ public:
     ~Person()= default; // Деструктор
 
 
-    const std::string& getFirstName() const;
-    const std::string& getLastName() const;
-    const std::string& getPatronymic() const;
+    // Геттеры
+    const std::string& getFirstName() const; // Имя
+    const std::string& getLastName() const; // Фамилия
+    const std::string& getPatronymic() const; // Отчёство
 
-    void setFirstName(const std::string& first_name_);
-    void setLastName(const std::string& last_name_);
-    void setPatronymic(const std::string& patronymic_);
+    // Сеттеры
+    void setFirstName(const std::string& first_name_); // Имя
+    void setLastName(const std::string& last_name_); // Фамилия
+    void setPatronymic(const std::string& patronymic_); // Отчёство
 
 };
 

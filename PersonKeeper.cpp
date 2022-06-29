@@ -7,6 +7,7 @@ PersonKeeper& PersonKeeper::instance()
     return keeper;
 }
 
+// Записывает из Стека в файл
 void PersonKeeper::writePersons(Stack<Person> stack, std::fstream& ofile)
 {
     if (!ofile) // Если файл не открылся
@@ -25,6 +26,7 @@ void PersonKeeper::writePersons(Stack<Person> stack, std::fstream& ofile)
     }
 }
 
+// Считывает ФИО из файла в Стек
 Stack<Person> PersonKeeper::readPersons(std::fstream& ifile)
 {
     if (!ifile) // Если файл не открылся

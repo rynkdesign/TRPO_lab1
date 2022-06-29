@@ -30,32 +30,37 @@ Person::Person(const std::string& full_name) // Конструктор копи�
     }
 }
 
+// Получить имя
 const std::string& Person::getFirstName() const
 {
     return first_name;
 }
 
+// Получить фамилию
 const std::string& Person::getLastName() const
 {
     return last_name;
 }
 
+// Получить отчество
 const std::string& Person::getPatronymic() const
 {
     return patronymic;
 }
 
-
+// Установить имя
 void Person::setFirstName(const std::string& first_name_)
 {
     first_name = first_name_;
 }
 
+// Установить фамилию
 void Person::setLastName(const std::string& last_name_)
 {
     last_name = last_name_;
 }
 
+// Установить отчество
 void Person::setPatronymic(const std::string& patronymic_)
 {
     patronymic = patronymic_;

@@ -47,15 +47,15 @@ void Stack<T>::push(T value_) // Помещение объекта в Стек
 
     if(top) //Если в Стеке что-то есть
     {
-        noviy->next=top;
-        top=noviy;
+        noviy->next=top; // Следующий у Нового будет топ
+        top=noviy; // Топом станет новый
     }
     else //Если Стек пустой
     {
-        top=noviy;
-        top->next=nullptr;
+        top=noviy; // Топом станет новый
+        top->next=nullptr; // Следующим nullptr
     }
-    size++;
+    size++; // Увеличить число элем. стека
 };
 
 template <class T>
@@ -104,12 +104,12 @@ const T& Stack<T>::operator[] (unsigned index) const // Оператор [], д�
 {
     Node<T>* tmp = top;
         unsigned i = 0;
-        for (; tmp != nullptr && i < index; tmp = tmp->next, ++i);
+        for (; tmp != nullptr && i < index; tmp = tmp->next, ++i); //Передвигаемся до нужного нам элемента
 
         if (tmp == nullptr)
-            throw "Index > list size";
+            throw "Index > list size"; // Ошибка
         else
-            return tmp->value;
+            return tmp->value; // Возвращаем его значение
 }
 
 template<typename T>
