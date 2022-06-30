@@ -25,5 +25,10 @@ HEADERS += \
     person.h
 
 DISTFILES += \
-    input.txt \
+    ../../../4 item.txt \
+    4item.txt \
+    commas.txt \
+    empty.txt \
+    normal.txt \
+    num-sym.txt \
     output.txt

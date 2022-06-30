@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <iostream>
+#include <ctype.h>
 
 class Person // Класс для хранения ФИО
 {

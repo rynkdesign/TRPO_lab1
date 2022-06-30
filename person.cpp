@@ -9,24 +9,83 @@ Person::Person(const Person& other) // Конструктор копирован
 
 Person::Person(const std::string& full_name) // Конструктор копирования строки
 {
+    bool isAlph = true;
+    std::string temp;
     unsigned i = 0;
-    for (;i < full_name.size(); i++) // Идем по строке
+    int count = 0;
+    for (;count <3; i++) // Идем по строке до тех пор, пока у нас не заполнилось ФИ или ФИО
     {
-        if (full_name[i] == ' ') // Если встречаем пробел
+        if (full_name[i] == ' ' ) // Если встречаем пробел или
+        {
             break; // Выходим из цикла
-        last_name.push_back(full_name[i]); // Записываем в Фамилию
+
+        }
+        else if (!isalpha(full_name[i])) // Проверяем нет ли чего-то кроме букв
+        {
+            isAlph = false;
+        }
+        else if (isalpha(full_name[i])) // Или запоминаем 1 слово
+        {
+            temp +=full_name[i];
+        }
     }
 
+    if(isAlph) // Если только буквы, то записываем в фамилию 1 слово
+    {
+        last_name = temp;
+        count++;
+    }
+
+    isAlph = true;
+    temp.clear();
     for (i++ ;i < full_name.size(); i++) // Идём дальше по строке
     {
-        if (full_name[i] == ' ') // Если встречаем пробел
+        if (full_name[i] == ' ' ) // Если встречаем пробел или
+        {
             break; // Выходим из цикла
-        first_name.push_back(full_name[i]); // Записываем в Имя
+
+        }
+        else if (!isalpha(full_name[i])) // Проверяем нет ли чего-то кроме букв
+        {
+            isAlph = false;
+        }
+        else if (isalpha(full_name[i])) // Или запоминаем 2 слово
+        {
+
+            temp +=full_name[i];
+        }
     }
 
-    for (i++;i < full_name.size(); i++) // Все остальное записываем в Отчество
+    if(isAlph) // Если только буквы, то записываем в имя 2 слово
     {
-        patronymic.push_back(full_name[i]);
+        first_name = temp;
+        count++;
+    }
+
+    isAlph = true;
+    temp.clear();
+    for (i++;i < full_name.size(); i++) // Записываем отчество
+    {
+        if (full_name[i] == ' ' ) // Если встречаем пробел или
+        {
+            break; // Выходим из цикла
+
+        }
+        else if (!isalpha(full_name[i])) // Проверяем нет ли чего-то кроме букв
+        {
+            isAlph = false;
+        }
+        else if (isalpha(full_name[i])) // Или запоминаем 3 слово
+        {
+
+            temp +=full_name[i];
+        }
+    }
+
+    if(isAlph) // Если только буквы, то записываем в отчество 3 слово
+    {
+        patronymic = temp;
+        count++;
     }
 }
 
